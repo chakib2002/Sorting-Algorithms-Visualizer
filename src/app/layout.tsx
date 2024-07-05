@@ -1,6 +1,14 @@
 import "t3/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
+import StrategyProvider from "t3/strategies/StrategyProvider";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "t/lib/utils";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata = {
   title: "Create T3 App",
@@ -14,8 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
-    </html>
+    <StrategyProvider>
+      <html lang="en" className={`${GeistSans.variable}`}>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable,
+          )}
+        >
+          {children}
+        </body>
+      </html>
+    </StrategyProvider>
   );
 }
