@@ -1,16 +1,24 @@
+"use client";
+
 import { cn } from "t/lib/utils";
-import { Slider } from "t/components/ui/slider";
+import { Slider as SliderComponent } from "t/components/ui/slider";
 
-type SliderProps = React.ComponentProps<typeof Slider>;
+type SliderProps = React.ComponentProps<typeof SliderComponent>;
 
-export function SliderDemo({ className, ...props }: SliderProps) {
+export function Slider({
+  className,
+  ...props
+}: SliderProps & { title: string }) {
   return (
-    <Slider
-      defaultValue={[50]}
-      max={100}
-      step={1}
-      className={cn("w-[60%]", className)}
-      {...props}
-    />
+    <div className="space-y-1">
+      <p>{props.title}</p>
+      <SliderComponent
+        max={props.max}
+        min={props.min}
+        step={props.step ?? 1}
+        className={cn("w-[250px]", className)}
+        {...props}
+      />
+    </div>
   );
 }

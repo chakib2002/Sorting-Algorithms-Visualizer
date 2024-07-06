@@ -21,7 +21,7 @@ const StopButton: FC<StopButtonProps> = ({ array, setArray, order, delay }) => {
         }}
         className="flex items-center border-2 border-slate-900 bg-white text-slate-900 lg:hover:border-slate-500 lg:hover:bg-slate-100 lg:hover:text-slate-500"
       >
-        <Pause size={24} />
+        <Pause size={20} />
         <span>STOP</span>
       </Button>
     );
@@ -35,7 +35,7 @@ const StopButton: FC<StopButtonProps> = ({ array, setArray, order, delay }) => {
         }}
         className="flex items-center border-2 border-slate-900 bg-white text-slate-900 lg:hover:border-slate-500 lg:hover:bg-slate-100 lg:hover:text-slate-500"
       >
-        <Play size={24} />
+        <Play size={20} />
         <span>Play</span>
       </Button>
     );
