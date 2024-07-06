@@ -12,6 +12,7 @@ import {
 } from "t/components/ui/select";
 import bubbleSortStrategy from "t3/strategies/BubbleSortStrategy";
 import { useStrategy } from "t3/strategies/ContextStrategy";
+import InsertionSortStrategy from "t3/strategies/InsertionSortStrategy";
 import { type SortingAlgorithmsNames } from "t3/types/globalTypes";
 
 interface SelectMenuProps {
@@ -26,6 +27,7 @@ const SelectMenu: React.FC<SelectMenuProps> = ({ placeholder, items }) => {
 
   const handleValueChange = (value: SortingAlgorithmsNames) => {
     if (value === "bubbleSort") setStrategy(new bubbleSortStrategy());
+    if (value === "insertionSort") setStrategy(new InsertionSortStrategy());
   };
 
   return (
