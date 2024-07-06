@@ -32,7 +32,7 @@ export default function HomePage() {
           <div></div>
           <div></div>
           <div className="flex gap-5">
-            <StopButton />
+            <StopButton array={array} order={order} setArray={setArray} />
             <ResetButton arrayLength={length} setArray={setArray} />
           </div>
         </div>

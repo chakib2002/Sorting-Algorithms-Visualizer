@@ -19,6 +19,8 @@ const StartButton: FC<StartButtonProps> = ({
   return (
     <Button
       onClick={async () => {
+        if (!strategy) return;
+        if (strategy.continueIteration === false) strategy.retakeIteration();
         await strategy?.sort(array, setArray, order, delay);
       }}
       className="bg-slate-900 px-6 py-2 font-semibold text-white transition duration-300 ease-out active:scale-95 lg:ring-slate-900 lg:hover:bg-white lg:hover:text-slate-900 lg:hover:ring-2"

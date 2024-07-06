@@ -8,4 +8,8 @@ export interface ISortingAlgorithm {
     order: orderBy,
     delay: number | undefined,
   ) => Promise<void>;
+
+  continueIteration: boolean;
+  stopIteration: () => void;
+  retakeIteration: () => void;
 }
