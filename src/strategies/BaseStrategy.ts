@@ -7,7 +7,7 @@ export interface ISortingAlgorithm {
     setArr: Dispatch<SetStateAction<number[]>>,
     order: orderBy,
     delay: number | undefined,
-  ) => Promise<void>;
+  ) => Promise<void> | Promise<number[]>;
 
   continueIteration: boolean;
   stopIteration: () => void;
