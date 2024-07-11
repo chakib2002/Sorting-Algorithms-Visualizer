@@ -8,48 +8,48 @@ export const AlgorithmsList: {
     value: "bubbleSort",
     label: "Bubble Sort",
   },
+  // {
+  //   value: "bucketSort",
+  //   label: "Bucket Sort",
+  // },
+  // {
+  //   value: "countingSort",
+  //   label: "Counting Sort",
+  // },
   {
-    value: "bucketSort",
-    label: "Bucket Sort",
-  },
-  {
-    value: "countingSort",
-    label: "Counting Sort",
-  },
-  {
-    value: "heapSort",
-    label: "Heap Sort",
+    value: "selectionSort",
+    label: "Selection Sort",
   },
   {
     value: "insertionSort",
     label: "Insertion Sort",
   },
   {
-    value: "mergeSort",
-    label: "Merge Sort",
-  },
-  {
     value: "quickSort",
     label: "Quick Sort",
   },
   {
-    value: "radixSort",
-    label: "Radix Sort",
+    value: "mergeSort",
+    label: "Merge Sort",
   },
   {
-    value: "selectionSort",
-    label: "Selection Sort",
+    value: "heapSort",
+    label: "Heap Sort",
   },
-  {
-    value: "shellSort",
-    label: "Shell Sort",
-  },
-  {
-    value: "timSort",
-    label: "Tim Sort",
-  },
-  {
-    value: "TreeSort",
-    label: "Tree Sort",
-  },
+  // {
+  //   value: "radixSort",
+  //   label: "Radix Sort",
+  // },
+  // {
+  //   value: "shellSort",
+  //   label: "Shell Sort",
+  // },
+  // {
+  //   value: "timSort",
+  //   label: "Tim Sort",
+  // },
+  // {
+  //   value: "TreeSort",
+  //   label: "Tree Sort",
+  // },
 ];

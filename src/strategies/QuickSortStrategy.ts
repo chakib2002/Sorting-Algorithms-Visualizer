@@ -1,11 +1,12 @@
 import { type orderBy } from "t3/types/globalTypes";
 import { type ISortingAlgorithm } from "./BaseStrategy";
+import { swap } from "t3/utils/helpers/swap";
 
 export default class QuickSortStrategy implements ISortingAlgorithm {
   sort: (
     arr: number[],
     setArr: React.Dispatch<React.SetStateAction<number[]>>,
-    order: "asc" | "desc",
+    order: orderBy,
     delay: number | undefined,
   ) => Promise<number[]>;
   continueIteration: boolean;
@@ -23,7 +24,7 @@ export default class QuickSortStrategy implements ISortingAlgorithm {
 
     this.sort = async (array, setArr, order, delay) => {
       const quickSort = async (arr: number[], left: number, right: number) => {
-        if (left >= right) {
+        if (left >= right || !this.continueIteration) {
           return;
         }
 
@@ -39,7 +40,6 @@ export default class QuickSortStrategy implements ISortingAlgorithm {
         );
 
         await quickSort(arr, left, index - 1);
-
         await quickSort(arr, index, right);
       };
 
@@ -68,12 +68,11 @@ export default class QuickSortStrategy implements ISortingAlgorithm {
               right--;
             }
           }
+
           if (left <= right) {
-            [arr[left], arr[right]] = [arr[right], arr[left]];
+            if (!this.continueIteration) return left;
+            await swap(arr, left, right, delay);
             setArr([...arr]);
-            if (delay) {
-              await new Promise((resolve) => setTimeout(resolve, delay));
-            }
             left++;
             right--;
           }
